@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("isAdmin") !== "true") {
+      alert("Unauthorized access");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <h2>Add a Challenge</h2>
+  <input id="name" placeholder="Challenge Name">
+  <input id="creator" placeholder="Creator">
+  <input id="levelID" placeholder="Level ID">
+  <input id="points" type="number" placeholder="Points">
+  <button onclick="addChallenge()">Add Challenge</button>
+
+  <script>
+    function addChallenge() {
+      const name = document.getElementById("name").value;
+      const creator = document.getElementById("creator").value;
+      const levelID = document.getElementById("levelID").value;
+      const points = parseInt(document.getElementById("points").value);
+
+      const newChallenge = {
+        name,
+        creator,
+        levelID,
+        points
+      };
+
+      // 🚧 Save to file logic requires backend/server — here's a placeholder
+      console.log("Challenge to add:", newChallenge);
+      alert("Challenge would be added (needs backend)");
+    }
+  </script>
+</body>
+</html>
