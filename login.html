@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Admin Login</h2>
+  <input type="password" id="password" placeholder="Enter admin password">
+  <button onclick="checkPassword()">Login</button>
+
+  <script>
+    const ADMIN_PASSWORD = "copyrightofcrimxinproductions2025";
+
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      if (input === ADMIN_PASSWORD) {
+        localStorage.setItem("isAdmin", "true");
+        window.location.href = "admin.html";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+</body>
+</html>
